@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+$primary-color: #49111c;
+$on-primary-color: #f2f4f3;
+$bg-color: #0a0908;
+$secondary-color: #a9927d;
+$add-color: #5e503f;
+$text-font: "Inter";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: $text-font;
+  font-size: 18px;
+}
+
+body {
+  background-color: $bg-color;
+  color: $on-primary-color;
+}
+
+@mixin scale($property) {
+  scale: $property;
+}
+
+.card {
+  background-color: $primary-color;
+  width: fit-content;
+  padding: 15px;
+
+  & h3 {
+    font-size: 22px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  &:hover {
+    @include scale(1.05);
+  }
+}
+
+// .card h3 {
+//   font-size: 22px;
+//   text-align: center;
+//   margin-top: 10px;
+// }
+
+.img-container {
+  display: flex;
+  background: url("./sela_jacket.jpeg") no-repeat center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+
+  & p {
+    opacity: 0;
+    transition: opacity 0.25s;
+    text-align: center;
+    align-self: center;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  &:hover {
+    p {
+      opacity: 1;
+    }
+  }
+}
+
+.img-container:hover {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("./sela_jacket.jpeg");
+}
+
+// .img-container p {
+//   opacity: 0;
+//   transition: opacity 0.25s;
+//   text-align: center;
+//   align-self: center;
+//   pointer-events: none;
+//   user-select: none;
+// }
+
+// .img-container:hover p {
+//   opacity: 1;
+// }
